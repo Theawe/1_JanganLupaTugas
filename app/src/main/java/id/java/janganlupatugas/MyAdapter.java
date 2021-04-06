@@ -1,12 +1,19 @@
 package id.java.janganlupatugas;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
@@ -35,6 +42,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.myText1.setText(data1[position]);
         holder.myText2.setText(data2[position]);
         holder.myText3.setText(data3[position]);
+        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,DetailActivity.class);
+                intent.putExtra("data1",data1[position]);
+                intent.putExtra("data2",data2[position]);
+                intent.putExtra("data3",data3[position]);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -44,11 +61,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView myText1, myText2,myText3;
+        ConstraintLayout mainLayout;
+
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             myText1 = itemView.findViewById(R.id.myText1);
             myText2 = itemView.findViewById(R.id.myText2);
             myText3 = itemView.findViewById(R.id.myText3);
+            mainLayout = itemView.findViewById(R.id.mainLayout);
         }
     }
 }

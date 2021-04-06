@@ -15,4 +15,9 @@
         android:name="id.java.janganlupatugas.HistoriFragment"
         android:label="fragment_histori"
         tools:layout="@layout/fragment_histori" />
+    <fragment
+        android:id="@+id/test"
+        android:name="id.java.janganlupatugas.DetailListFragment"
+        android:label="fragment_detail_list"
+        tools:layout="@layout/fragment_detail_list" />
 </navigation>

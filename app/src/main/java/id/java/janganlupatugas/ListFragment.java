@@ -39,8 +39,6 @@ public class ListFragment extends Fragment {
         recyclerview = view.findViewById(R.id.recyclerView);
         recyclerview.setAdapter(myAdapter);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
-
-
         return view;
     }
 }

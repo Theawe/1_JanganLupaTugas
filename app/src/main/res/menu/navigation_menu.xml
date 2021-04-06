@@ -4,4 +4,6 @@
         android:title="@string/list_tugas"/>
     <item android:id="@+id/menuHistori"
         android:title="@string/histori_tugas"/>
+    <item android:id="@+id/test"
+        android:title="Test"/>
 </menu>
